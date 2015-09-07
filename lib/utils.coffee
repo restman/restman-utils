@@ -1,6 +1,9 @@
+Buffer = require('buffer').Buffer
+
 _   = require 'lodash'
 md5 = require 'md5'
-Buffer = require('buffer').Buffer
+uuid = require 'node-uuid'
+
 
 utils =
 
@@ -16,5 +19,8 @@ utils =
   base64Decode: (encodeString) ->
     return new TypeError('Must be string') unless _.isString(encodeString)
     new Buffer(encodeString, 'base64').toString()
+
+  # uuid
+  uuid: uuid
 
 module.exports = utils
