@@ -1,0 +1,32 @@
+{
+  "name": "restman-utils",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "devDependencies": {
+    "coffee-script": "1.9.3",
+    "mocha": "2.2.5",
+    "should": "7.0.1"
+  },
+  "scripts": {
+    "test": "mocha",
+    "prepublish": "coffee -c `find {./lib,./index.coffee} -type f -name '*.coffee'`"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/restman/restman-utils.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/restman/restman-utils/issues"
+  },
+  "homepage": "https://github.com/restman/restman-utils#readme",
+  "dependencies": {
+    "md5": "^2.0.0"
+  }
+}
