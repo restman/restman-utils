@@ -4,4 +4,4 @@ utils =
 
   md5: md5
 
-module.exports = utilsgit 
+module.exports = utils
