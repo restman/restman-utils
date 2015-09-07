@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/restman/restman-utils#readme",
   "dependencies": {
-    "md5": "^2.0.0"
+    "md5": "^2.0.0",
+    "lodash": "3.10.0"
   }
 }
