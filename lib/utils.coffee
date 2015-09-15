@@ -1,9 +1,10 @@
 Buffer = require('buffer').Buffer
+path    = require 'path'
 
 _   = require 'lodash'
 md5 = require 'md5'
 uuid = require 'node-uuid'
-
+glob = require 'glob'
 
 utils =
 
@@ -22,5 +23,15 @@ utils =
 
   # uuid
   uuid: uuid
+  
+  # load modules
+  loadModules: (modulePath, suffix = '') ->
+    modules = {}
+    filepaths = glob.sync "#{modulePath}/**/*.coffee", ignore:['./index.coffee']
+    for filepath in filepaths
+      fileName = path.basename filepath, '.coffee'
+      moduleName = _.camelCase fileName
+      modules["#{moduleName}#{suffix}"] = require filepath
+    return modules
 
 module.exports = utils

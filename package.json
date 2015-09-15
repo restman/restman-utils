@@ -1,6 +1,6 @@
 {
   "name": "restman-utils",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "main": "index.js",
   "directories": {
@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/restman/restman-utils#readme",
   "dependencies": {
+    "glob": "^5.0.14",
     "lodash": "3.10.0",
     "md5": "^2.0.0",
     "node-uuid": "^1.4.3"
