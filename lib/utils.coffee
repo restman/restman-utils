@@ -23,7 +23,7 @@ utils =
 
   # uuid
   uuid: uuid
-  
+
   # load modules
   loadModules: (modulePath, suffix = '') ->
     modules = {}
@@ -33,5 +33,17 @@ utils =
       moduleName = _.camelCase fileName
       modules["#{moduleName}#{suffix}"] = require filepath
     return modules
+
+  isPrivateIp: (addr) ->
+    /^10\.([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})/.test(addr) or
+    /^192\.168\.([0-9]{1,3})\.([0-9]{1,3})/.test(addr) or
+    /^172\.(1[6-9]|2\d|30|31)\.([0-9]{1,3})\.([0-9]{1,3})/.test(addr) or
+    /^127\.([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})/.test(addr) or
+    /^169\.254\.([0-9]{1,3})\.([0-9]{1,3})/.test(addr) or
+    /^fc00:/.test(addr) or
+    /^fe80:/.test(addr) or
+    /^::1$/.test(addr) or
+    /^::$/.test(addr)
+
 
 module.exports = utils
